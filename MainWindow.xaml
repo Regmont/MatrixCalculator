@@ -5,8 +5,353 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MatrixCalculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Калькулятор матриц" Height="1000" Width="1200"
+        WindowState="Maximized"
+        Background="SteelBlue">
+    <Grid Height="980" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="1*">
+            </RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Матрица 1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Размеры матрицы:" Height="30" Margin="0,0,10,0" FontSize="18"/>
+            <TextBox Width="30" Height="30" FontSize="18" TextAlignment="Center" MaxLength="2"/>
+            <TextBlock Text="×" Height="30" FontSize="18"/>
+            <TextBox Width="30" Height="30" FontSize="18" TextAlignment="Center" MaxLength="2"/>
+            <Button Content="Ввод" Width="60"  Height="30" FontSize="18" Margin="10,0,0,0"/>
+        </StackPanel>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="2*">
+                </RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,0,0"/>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Button Content="Найти определитель" Width="180" Height="30" Margin="0,0,50,0" FontSize="18"/>
+            <Button Content="Транспонировать" Width="180" Height="30" Margin="0,0,50,0" FontSize="18"/>
+            <Button Content="Найти обратную" Width="180" Height="30" FontSize="18"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Умножить на:" Width="150" Height="30" Margin="0,0,20,0" FontSize="18"/>
+            <TextBox Width="150" Height="30" FontSize="18"/>
+        </StackPanel>
+
+        <Button Content="↑↓" Grid.Row="5" Width="50" Height="50" FontSize="24"/>
+
+        <TextBlock Grid.Row="6" Text="Матрица 2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+
+        <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Размеры матрицы:" Height="30" Margin="0,0,10,0" FontSize="18"/>
+            <TextBox Width="30" Height="30" FontSize="18" TextAlignment="Center" MaxLength="2"/>
+            <TextBlock Text="×" Height="30" FontSize="18"/>
+            <TextBox Width="30" Height="30" FontSize="18" TextAlignment="Center" MaxLength="2"/>
+            <Button Content="Ввод" Width="60"  Height="30" FontSize="18" Margin="10,0,0,0"/>
+        </StackPanel>
+
+        <Grid Grid.Row="8">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="2*">
+                </RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
+                <TextBox Width="100" Height="20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
+                <TextBox Width="100" Height="20" Margin="0,5,0,0"/>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Сложить" Width="180" Height="30" Margin="0,0,50,0" FontSize="18"/>
+            <Button Content="Вычесть" Width="180" Height="30" Margin="0,0,50,0" FontSize="18"/>
+            <Button Content="Перемножить" Width="180" Height="30" FontSize="18"/>
+        </StackPanel>
     </Grid>
 </Window>
