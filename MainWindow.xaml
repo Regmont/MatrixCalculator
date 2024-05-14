@@ -5,353 +5,357 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MatrixCalculator"
         mc:Ignorable="d"
-        Title="Калькулятор матриц" Height="1000" Width="1200"
+        Title="Калькулятор матриц" Height="1000" Width="1300"
         WindowState="Maximized"
         Background="SteelBlue">
-    <Grid Height="980" VerticalAlignment="Top">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="9*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="1*">
-            </RowDefinition>
-        </Grid.RowDefinitions>
-
-        <TextBlock Grid.Row="0" Text="Матрица 1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
-
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBlock Text="Размеры матрицы:" Height="30" Margin="0,0,10,0" FontSize="18"/>
-            <TextBox Width="30" Height="30" FontSize="18" TextAlignment="Center" MaxLength="2"/>
-            <TextBlock Text="×" Height="30" FontSize="18"/>
-            <TextBox Width="30" Height="30" FontSize="18" TextAlignment="Center" MaxLength="2"/>
-            <Button Content="Ввод" Width="60"  Height="30" FontSize="18" Margin="10,0,0,0"/>
-        </StackPanel>
-
-        <Grid Grid.Row="2">
+    <ScrollViewer>
+        <Grid Height="980" VerticalAlignment="Top">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition Height="2*">
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="1.5*">
                 </RowDefinition>
             </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
-            </StackPanel>
+            <TextBlock Grid.Row="0" Text="Матрица 1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
 
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
+                <TextBlock Text="Размеры матрицы:" Height="30" Margin="0,0,10,0" FontSize="18"/>
+                <TextBox x:Name="tbFirstWidth" Width="30" Height="30" FontSize="18" TextAlignment="Center" MaxLength="2"/>
+                <TextBlock Text="×" Height="30" FontSize="18"/>
+                <TextBox x:Name="tbFirstLength" Width="30" Height="30" FontSize="18" TextAlignment="Center" MaxLength="2"/>
+                <Button x:Name="btnFirstEnter" Content="Ввод" Width="60"  Height="30" FontSize="18" Margin="10,0,0,0" Click="btnFirstEnter_Click"/>
+                <Button x:Name="btnFirstClear" Content="Очистить матрицу" Width="180"  Height="30" FontSize="18" Margin="30,0,0,0" Click="btnFirstClear_Click"/>
             </StackPanel>
 
-            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
-            </StackPanel>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="2*">
+                    </RowDefinition>
+                </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
+                <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbFirst_0_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_0_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_0_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_0_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_0_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_0_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_0_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_0_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_0_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_0_9" Width="100" Height="20" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbFirst_1_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_1_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_1_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_1_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_1_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_1_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_1_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_1_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_1_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_1_9" Width="100" Height="20" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbFirst_2_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_2_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_2_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_2_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_2_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_2_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_2_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_2_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_2_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_2_9" Width="100" Height="20" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbFirst_3_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_3_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_3_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_3_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_3_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_3_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_3_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_3_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_3_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_3_9" Width="100" Height="20" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbFirst_4_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_4_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_4_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_4_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_4_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_4_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_4_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_4_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_4_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_4_9" Width="100" Height="20" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbFirst_5_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_5_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_5_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_5_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_5_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_5_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_5_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_5_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_5_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_5_9" Width="100" Height="20" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbFirst_6_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_6_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_6_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_6_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_6_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_6_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_6_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_6_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_6_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_6_9" Width="100" Height="20" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbFirst_7_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_7_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_7_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_7_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_7_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_7_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_7_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_7_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_7_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_7_9" Width="100" Height="20" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbFirst_8_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_8_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_8_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_8_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_8_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_8_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_8_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_8_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_8_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_8_9" Width="100" Height="20" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <TextBox x:Name="tbFirst_9_0" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_9_1" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_9_2" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_9_3" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_9_4" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_9_5" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_9_6" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_9_7" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_9_8" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbFirst_9_9" Width="100" Height="20" Margin="0,5,0,0" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
+            </Grid>
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Button x:Name="btnDeterm" Content="Найти определитель" Width="180" Height="30" Margin="0,0,50,0" FontSize="18" Click="btnDeterm_Click"/>
+                <Button x:Name="btnTransp" Content="Транспонировать" Width="180" Height="30" Margin="0,0,50,0" FontSize="18" Click="btnTransp_Click"/>
+                <Button x:Name="btnInverse" Content="Найти обратную" Width="180" Height="30" FontSize="18" Click="btnInverse_Click"/>
             </StackPanel>
 
             <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
+                <Button x:Name="btnMultNumber" Content="Умножить на:" Width="150" Height="30" Margin="0,0,20,0" FontSize="18" Click="btnMultNumber_Click"/>
+                <TextBox x:Name="tbNumber" Width="150" Height="30" FontSize="18" MaxLength="14"/>
             </StackPanel>
 
-            <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
-            </StackPanel>
+            <Button x:Name="btnSwap" Content="↑↓" Grid.Row="5" Width="50" Height="50" FontSize="30" Click="btnSwap_Click"/>
 
-            <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
-            </StackPanel>
+            <TextBlock Grid.Row="6" Text="Матрица 2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
 
             <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
+                <TextBlock Text="Размеры матрицы:" Height="30" Margin="0,0,10,0" FontSize="18"/>
+                <TextBox x:Name="tbSecondWidth" Width="30" Height="30" FontSize="18" TextAlignment="Center" MaxLength="2"/>
+                <TextBlock Text="×" Height="30" FontSize="18"/>
+                <TextBox x:Name="tbSecondLength" Width="30" Height="30" FontSize="18" TextAlignment="Center" MaxLength="2"/>
+                <Button x:Name="btnSecondEnter" Content="Ввод" Width="60"  Height="30" FontSize="18" Margin="10,0,0,0" Click="btnSecondEnter_Click"/>
+                <Button x:Name="btnSecondClear" Content="Очистить матрицу" Width="180"  Height="30" FontSize="18" Margin="30,0,0,0" Click="btnSecondClear_Click"/>
             </StackPanel>
 
-            <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
-            </StackPanel>
+            <Grid Grid.Row="8">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="2*">
+                    </RowDefinition>
+                </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,0,0"/>
-            </StackPanel>
-        </Grid>
+                <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbSecond_0_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_0_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_0_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_0_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_0_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_0_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_0_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_0_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_0_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_0_9" Width="100" Height="20" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
 
-        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
-            <Button Content="Найти определитель" Width="180" Height="30" Margin="0,0,50,0" FontSize="18"/>
-            <Button Content="Транспонировать" Width="180" Height="30" Margin="0,0,50,0" FontSize="18"/>
-            <Button Content="Найти обратную" Width="180" Height="30" FontSize="18"/>
-        </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbSecond_1_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_1_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_1_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_1_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_1_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_1_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_1_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_1_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_1_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_1_9" Width="100" Height="20" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
 
-        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="Умножить на:" Width="150" Height="30" Margin="0,0,20,0" FontSize="18"/>
-            <TextBox Width="150" Height="30" FontSize="18"/>
-        </StackPanel>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbSecond_2_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_2_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_2_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_2_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_2_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_2_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_2_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_2_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_2_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_2_9" Width="100" Height="20" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
 
-        <Button Content="↑↓" Grid.Row="5" Width="50" Height="50" FontSize="24"/>
+                <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbSecond_3_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_3_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_3_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_3_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_3_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_3_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_3_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_3_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_3_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_3_9" Width="100" Height="20" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
 
-        <TextBlock Grid.Row="6" Text="Матрица 2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+                <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbSecond_4_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_4_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_4_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_4_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_4_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_4_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_4_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_4_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_4_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_4_9" Width="100" Height="20" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
 
-        <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBlock Text="Размеры матрицы:" Height="30" Margin="0,0,10,0" FontSize="18"/>
-            <TextBox Width="30" Height="30" FontSize="18" TextAlignment="Center" MaxLength="2"/>
-            <TextBlock Text="×" Height="30" FontSize="18"/>
-            <TextBox Width="30" Height="30" FontSize="18" TextAlignment="Center" MaxLength="2"/>
-            <Button Content="Ввод" Width="60"  Height="30" FontSize="18" Margin="10,0,0,0"/>
-        </StackPanel>
+                <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbSecond_5_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_5_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_5_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_5_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_5_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_5_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_5_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_5_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_5_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_5_9" Width="100" Height="20" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
 
-        <Grid Grid.Row="8">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition Height="2*">
-                </RowDefinition>
-            </Grid.RowDefinitions>
+                <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbSecond_6_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_6_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_6_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_6_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_6_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_6_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_6_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_6_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_6_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_6_9" Width="100" Height="20" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
 
-            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
-            </StackPanel>
+                <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbSecond_7_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_7_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_7_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_7_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_7_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_7_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_7_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_7_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_7_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_7_9" Width="100" Height="20" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
 
-            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
-            </StackPanel>
+                <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbSecond_8_0" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_8_1" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_8_2" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_8_3" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_8_4" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_8_5" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_8_6" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_8_7" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_8_8" Width="100" Height="20" Margin="0,0,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_8_9" Width="100" Height="20" IsEnabled="False" MaxLength="20"/>
+                </StackPanel>
 
-            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
-            </StackPanel>
+                <StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <TextBox x:Name="tbSecond_9_0" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_9_1" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_9_2" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_9_3" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_9_4" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_9_5" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_9_6" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_9_7" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_9_8" Width="100" Height="20" Margin="0,5,10,0" IsEnabled="False" MaxLength="14"/>
+                    <TextBox x:Name="tbSecond_9_9" Width="100" Height="20" Margin="0,5,0,0" IsEnabled="False" MaxLength="14"/>
+                </StackPanel>
+            </Grid>
 
-            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
-            </StackPanel>
-
-            <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
-            </StackPanel>
-
-            <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
-            </StackPanel>
-
-            <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
-            </StackPanel>
-
-            <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
-            </StackPanel>
-
-            <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,0,10,0"/>
-                <TextBox Width="100" Height="20"/>
-            </StackPanel>
-
-            <StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,10,0"/>
-                <TextBox Width="100" Height="20" Margin="0,5,0,0"/>
+            <StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnSum" Content="Сложить" Width="180" Height="30" Margin="0,0,50,0" FontSize="18" Click="btnSum_Click"/>
+                <Button x:Name="btnDif" Content="Вычесть" Width="180" Height="30" Margin="0,0,50,0" FontSize="18" Click="btnDif_Click"/>
+                <Button x:Name="btnProd" Content="Перемножить" Width="180" Height="30" FontSize="18" Click="btnProd_Click"/>
             </StackPanel>
         </Grid>
-
-        <StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="Сложить" Width="180" Height="30" Margin="0,0,50,0" FontSize="18"/>
-            <Button Content="Вычесть" Width="180" Height="30" Margin="0,0,50,0" FontSize="18"/>
-            <Button Content="Перемножить" Width="180" Height="30" FontSize="18"/>
-        </StackPanel>
-    </Grid>
+    </ScrollViewer>
 </Window>

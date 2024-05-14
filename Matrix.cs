@@ -18,6 +18,22 @@
             this.length = length;
             matrix = new double[width, length];
         }
+
+        public override string ToString()
+        {
+            string str = string.Empty;
+
+            for (int i = 0; i < width; i++)
+            {
+                for (int j = 0; j < length; j++)
+                {
+                    str += matrix[i, j] + "\t";
+                }
+                str += "\n";
+            }
+            return str;
+        }
+
         public void Fill(double[,] matr)
         {
             for (int i = 0; i < width; i++)
